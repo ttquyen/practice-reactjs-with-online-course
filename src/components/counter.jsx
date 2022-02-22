@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 class Counter extends Component {
   state = {
-    value: this.props.value, //rename variable "value" to make code cleaner and more maintainable
+    value: this.props.counter.value, //rename variable "value" to make code cleaner and more maintainable
     tags: ["tag1", "tag2"],
   };
   renderTags() {
@@ -31,7 +31,13 @@ class Counter extends Component {
         >
           Increment
         </button>
-        {this.renderTags()}
+        <button
+          onClick={() => this.props.onDelete(this.props.counter.id)} //raise that Delete btn is clicked to onDelete function of props
+          className="btn btn-danger btn-sm m-2"
+        >
+          Delete
+        </button>
+        {/* {this.renderTags()} */}
       </React.Fragment>
     );
   }
