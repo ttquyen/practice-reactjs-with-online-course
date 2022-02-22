@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 class Counter extends Component {
   state = {
-    count: 0,
+    value: this.props.value, //rename variable "value" to make code cleaner and more maintainable
     tags: ["tag1", "tag2"],
   };
   renderTags() {
@@ -15,19 +15,21 @@ class Counter extends Component {
     );
   }
   handleIncrement = () => {
-    this.setState({ count: this.state.count + 1 });
-    console.log("Increment Clicked", this, this.state.count);
+    this.setState({ value: this.state.value + 1 });
+    console.log("Increment Clicked", this, this.state.value);
     this.formatCount();
   };
   render() {
     return (
       <React.Fragment>
+        {this.props.children}
+        {/* pass another props outside from mother component */}
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
         <button
           onClick={this.handleIncrement}
           className="btn btn-secondary btn-sm"
         >
-          Increament
+          Increment
         </button>
         {this.renderTags()}
       </React.Fragment>
@@ -35,12 +37,12 @@ class Counter extends Component {
   }
   getBadgeClasses() {
     let classes = "badge ";
-    classes += this.state.count === 0 ? "bg-warning text-dark" : "bg-primary";
+    classes += this.state.value === 0 ? "bg-warning text-dark" : "bg-primary";
     return classes;
   }
 
   formatCount() {
-    const { count } = this.state;
+    const { value: count } = this.state;
     return count === 0 ? "Zero" : count;
   }
 }
