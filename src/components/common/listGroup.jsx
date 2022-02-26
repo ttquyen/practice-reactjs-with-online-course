@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 const ListGroup = (props) => {
-  const { items, currentItem, textProperty, valueProperty, onItemSelect } =
+  const { items, selectedItem, textProperty, valueProperty, onItemSelect } =
     props;
   return (
     <ul className="list-group">
       {items.map((item) => (
         <li
           className={
-            item === currentGenre ? "list-group-item active" : "list-group-item"
+            item === selectedItem ? "list-group-item active" : "list-group-item"
           }
           onClick={() => {
             onItemSelect(item);
