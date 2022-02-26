@@ -10,6 +10,7 @@ class MovieTable extends Component {
     movies: [],
     genres: [],
     currentPage: 1,
+    currenGenre: "All",
     pageSize: 4,
   };
   componentDidMount() {
@@ -31,6 +32,7 @@ class MovieTable extends Component {
     this.setState({ currentPage: page });
   };
   handleGenreSelect = (genre) => {
+    this.setState({ currenGenre: genre });
     console.log("select", genre);
   };
   render() {
