@@ -1,13 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App";
 import "bootstrap/dist/css/bootstrap.css";
 import "font-awesome/css/font-awesome.css";
-import MovieTable from "./components/movieTable";
+import Movies from "./components/movies";
 ReactDOM.render(
   <React.StrictMode>
-    <MovieTable />
+    <Movies />
   </React.StrictMode>,
   document.getElementById("root")
 );
