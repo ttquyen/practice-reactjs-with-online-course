@@ -3,23 +3,36 @@ import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
 const NavBar = () => {
   return (
-    <nav className="nav nav-pills flex-column flex-sm-row">
-      <Link
-        className="flex-sm-fill text-sm-center nav-link "
-        aria-current="page"
-        to="#"
-      >
-        Vidly
-      </Link>
-      <NavLink className="flex-sm-fill text-sm-center nav-link" to="/movies">
-        Movies
-      </NavLink>
-      <NavLink className="flex-sm-fill text-sm-center nav-link" to="/customers">
-        Customers
-      </NavLink>
-      <NavLink className="flex-sm-fill text-sm-center nav-link" to="/rentals">
-        Rentals
-      </NavLink>
+    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <div className="container-fluid">
+        <Link className="navbar-brand " aria-current="page" to="#">
+          NEON
+        </Link>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div className="navbar-nav">
+            <NavLink className="nav-link" to="/movies">
+              Movies
+            </NavLink>
+            <NavLink className="nav-link" to="/customers">
+              Customers
+            </NavLink>
+            <NavLink className="nav-link" to="/rentals">
+              Rentals
+            </NavLink>
+          </div>
+        </div>
+      </div>
     </nav>
   );
 };
